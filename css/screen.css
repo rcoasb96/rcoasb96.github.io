@@ -9,12 +9,12 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 /* ===== BASE STYLES ===== */
 
 /*
-  Setting type to a perfect fourth scale (3:4)
-  http://www.modularscale.com/?18&px&1.333&web&text
+  Setting type to a minor seventh scale (16:9)
+  http://www.modularscale.com/?18&px&1.778&web&text
 */
 
-html{
-  font-size: 1em; /* 18px */
+html {
+  font-size: 1.125em; /* 18px */
   font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
   line-height: 1.222em; /* 22px = 1 gridline*/
   background-color: #ddaaaa;
@@ -23,21 +23,19 @@ html{
 
 h1 {
   color: #a34747;
-  font-size: 2.369em; /* 42.635px */
-  line-height: 1.032em; /*44px @ 42.635px */
-  padding-bottom: 1.222em;
+  font-size: 3.161em; /* 56.903px */
+  line-height: 1.293em; /*44px @ 56.903px */
 }
 
 h2 {
-  font-size: 1.333em; /* 31.984px */
-  line-height: 1.454em; /* 22px @ 31.984px */
+  font-size: 1.778em; /* 32.004px */
+  line-height: 1.454em; /* 22px @ 32.004px */
   color: #6d0000;
-  padding-top: 1.222em;
-  padding-left: 1.222em;
+  padding: 1.222em;
 }
 
 p, ul {
-  padding: 1.222em; /* one grid line at 22px */
+  padding: 1.222em;  /* one grid line at 22px */
   color: #a34747;
 }
 
@@ -51,8 +49,8 @@ li:last-child {
 }
 
 figcaption {
-  font-size: 0.75em; /* 13.503px */
-  line-height: 1.629; /*22px @ 13.503px */
+  font-size: 1em; /* 18px */
+  line-height: 1.222em; /*22px @ 18px */
 }
 
 /* ===== LAYOUT STYLES ===== */
@@ -68,10 +66,101 @@ figcaption {
   background-color: #aaccbb;
 }
 
-.u-email {
+.facts {
   padding-left: 1.222em;
   padding-bottom: 1.222em;
 }
 
-/* ===== STATE STYLES ===== */
+.u-email {
+  padding-bottom: 1.222em; /*one gridline */
+}
 
+/* ===== STATE STYLES ===== */
+#page {
+  padding-top: 0;
+}
+
+.flexbox #header{
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+}
+
+.flexbox h1, h2{
+  display: column;
+  order: 2;
+  align-items: left;
+  text-align: center;
+  padding-bottom: 0.306em; /*one-fourth of a gridline*/
+  padding-right: 0.306em;
+}
+
+.flexbox ul, li{
+  order: 1;
+  display: inline-block;
+  align-content: center;
+  flex-direction: row;  
+  padding-right: 1.222em;
+  
+}
+
+.flexbox .u-email {
+  display: flex;
+  order: 3;
+  align-content: left; 
+}
+
+.flexbox .photo, .video, figcaption{
+  display: inline;
+  align-items: center;
+}
+
+/* 463 @ 18px/em */
+@media screen and (min-width: 25.72em) {
+h1 {
+  text-align: center;
+  font-size: 3.161em; /* 56.903px */
+  line-height: 1.16em; /* 66px @ 56.903px em */
+}
+
+.flexbox ul, li{
+  order: 1;
+  display: ;
+  text-align: row; 
+  padding-right: 1.222em;
+  
+}
+ 
+.flexbox #header{
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+}
+
+}
+
+/* 900 @ 18px/em */
+@media screen and (min-width: 50em) {
+h1 {
+  text-align: center;
+  font-size: 3.161em; /* 56.903px */
+  line-height: 1.16em; /* 66px @ 56.903px em */
+}
+
+#page {
+  padding-left: 2.391304348%; /* 11px margin / 460px viewport = 0.02391304348% */
+  padding-righ: 2.391304348%;
+}
+
+h2{
+  order: 1;
+  text-align: left;
+}
+
+.flexbox .work, 
+.skills, .school, .volunteer{
+  display: flex;
+  text-align: left;
+}
+
+}
